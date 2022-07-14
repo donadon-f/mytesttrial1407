@@ -37,3 +37,8 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: 'Azure subscription 1 (fd0c8573-ca3e-492e-97f1-13418e427b65)'
+        appName: 'delletededapp0714'
+        containers: '$(containerRegistry)/$(imageRepository):$(tag)'
