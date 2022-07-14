@@ -37,6 +37,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          latest
     - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Azure subscription 1 (fd0c8573-ca3e-492e-97f1-13418e427b65)'
